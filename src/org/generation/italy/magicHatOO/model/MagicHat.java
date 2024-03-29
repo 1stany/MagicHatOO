@@ -18,13 +18,13 @@ public class MagicHat {
         return randomHouse;
     }
 
-    private void announceAssignement(Student s, House randomHouse) {
+    public void announceAssignement(Student s, House randomHouse) {
         System.out.printf("%s...", s.getFullName());
         generateSuspance();
         System.out.printf("è stato inserito nella casa %s", randomHouse);
     }
 
-    private void announceAssignement(Student s) {
+    public void announceAssignement(Student s) {
         System.out.printf("%s...", s.getFullName());
         generateSuspance();
         System.out.printf("Fortunello è stato inserito nella sua casa preferita %s", s.getFavouriteHouse());
