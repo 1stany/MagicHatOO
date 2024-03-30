@@ -46,19 +46,19 @@ public class HouseAssignementCerimony {
     public void start() {
         Collections.shuffle(students);
         House.assignSize(STANDARD_SIZE);
-        for (int i = 0; i < NUM_STANDARD; i++) {
-            var house = hat.assignStudent(students.get(i));
-            makeAnnouncement(house, students.get(i));
-
-        }
+        fillHouses(0, NUM_STANDARD);
         House.assignSize(STANDARD_SIZE + 1);
-        for (int i = NUM_STANDARD; i < students.size(); i++) {
-            var house = hat.assignStudent(students.get(i));
-            makeAnnouncement(house, students.get(i));
-
-        }
+        fillHouses(NUM_STANDARD, students.size());
 
         reportAssignments();
+    }
+
+    private void fillHouses(int start, int end){
+        for (int i = start; i < end; i++) {
+            var house = hat.assignStudent(students.get(i));
+            makeAnnouncement(house, students.get(i));
+
+        }
     }
 
     private void makeAnnouncement(House house, Student s) {
@@ -85,8 +85,9 @@ public class HouseAssignementCerimony {
     }
 
     public static void main(String[] args) {
-        HouseAssignementCerimony cerimony = new HouseAssignementCerimony();
-        cerimony.start();
+        //HouseAssignementCerimony cerimony = new HouseAssignementCerimony();
+        //cerimony.start();
+        new HouseAssignementCerimony().start();
     }
 
 }

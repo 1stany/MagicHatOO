@@ -21,13 +21,19 @@ public class MagicHat {
     public void announceAssignement(Student s, House randomHouse) {
         System.out.printf("%s...", s.getFullName());
         generateSuspance();
-        System.out.printf("è stato inserito nella casa %s", randomHouse);
+        if(s.getFavouriteHouse() != null){
+            System.out.printf("è stato inserito nella casa %s invece che nella sua favorita %s%n", randomHouse, s.getFavouriteHouse());
+        }else{
+            System.out.printf("è stato inserito nella casa %s%n", randomHouse);
+        }
+        //System.out.printf("è stato inserito nella casa %s%s%n", randomHouse, s.getFavouriteHouse()!=null ? " invece che nella sua favorita " + s.getFavouriteHouse() : "");
+        
     }
 
     public void announceAssignement(Student s) {
         System.out.printf("%s...", s.getFullName());
         generateSuspance();
-        System.out.printf("Fortunello è stato inserito nella sua casa preferita %s", s.getFavouriteHouse());
+        System.out.printf("Fortunello è stato inserito nella sua casa preferita %s%n", s.getFavouriteHouse());
     }
     
 
